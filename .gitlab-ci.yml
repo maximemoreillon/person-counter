@@ -1,5 +1,5 @@
 stages:
-  - deployment
+  - containerization
 
 variables:
   APPLICATION_NAME: person-counter-aarch64
