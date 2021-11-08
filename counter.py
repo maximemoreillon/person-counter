@@ -24,8 +24,6 @@ class Counter:
         self.net = jetson.inference.detectNet('ssd-mobilenet-v2', threshold=0.3)
         print('[AI] Loading network OK')
 
-
-
     async def load_image_from_request(self, file):
         img_data = await file.read()
         nparr = np.frombuffer(img_data, np.uint8)
@@ -45,9 +43,7 @@ class Counter:
 
         filtered = [x for x in detections if x.ClassID  == 1]
 
-
         count = len(filtered)
-
 
         return {
         'prediction': count,

@@ -26,10 +26,6 @@ async def root():
 @app.post("/predict")
 async def predict(image: UploadFile = File (...)):
     image = await counter.load_image_from_request(image)
-
-
-
     prediction = counter.predict(image)
-
-
+    print(prediction)
     return prediction
